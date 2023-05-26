@@ -20,8 +20,10 @@
     box-sizing: border-box;
     user-select: none;
 }
-html, body {
-    height: 100%;
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
 }
 main {
     display: flex;
@@ -29,7 +31,7 @@ main {
     align-items: center;
     background-color: var(--background-color);
     font-family: var(--font-secondary);
-    height: 90%;
+    height: 90vh;
 }
 header {
     background-color: var(--primary-color);
@@ -39,24 +41,25 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 10%;
+    height: 10vh;
 }
 
 .logo {
     height: 100%;
 }
 .bakery {
-    padding: .7em .7em;
+    padding: 1vh 1vh;
     margin-right: 1em;
     background-image: linear-gradient(var(--background-color), rgb(82, 82, 116));
     color: var(--primary-color); 
     border: solid 0.2em;
     border-radius: 15px;
     font-family: var(--font-primary);
-    font-size: 1.2em;
+    font-size: clamp(0.5em, 2vh, 4em) ;
     height: 80%;
     display:flex;
     align-items: center;
+    cursor: pointer;
 }
 .overlay {
     position: fixed;
@@ -179,9 +182,11 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--background-shade);
+    margin-top: 3vh;
     height: 4em;
     width: 90%;
     border-radius: 15px;
+
 }
 .choco-message {
     color: var(--text-color);
@@ -198,8 +203,8 @@ header {
     box-sizing: content-box;
 }
 .choco {
-    /* width: clamp(15em, 50%, 40em); */
-    width: 70%;
+    min-width: 5em;
+    max-width: 90%;
     border-radius: 50%;
     cursor: pointer;
     filter: drop-shadow(0 0 .3em var(--primary-color));
@@ -239,16 +244,14 @@ header {
 
 @media screen and (min-width: 768px) {
 
-main {
+main { 
     flex-direction: row;
-    align-items: flex-start;
-    height: 90vh;
 }
 .choco-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
 }
 .item-box {
@@ -264,18 +267,4 @@ main {
 .item{
     width: 80%;
 }
-.choco{
-    width: clamp(15em, 50%, 40em); 
 }
-.message-box{
-    height:5em;
-}
-.choco-message {
-    width: 85%;
-    font-size: 1.5em;
-}
-.score{
-    font-size: 1.5em;
-}
-/* Modifier scrollbar */
-} 
